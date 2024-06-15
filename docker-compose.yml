@@ -10,7 +10,7 @@ services:
       - meg
 
   meg:
-    image: meg:latest
+    build: ../meg/
     container_name: meg
     ports:
       - "8081:8081"
