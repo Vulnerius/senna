@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meg
+  template:
+    metadata:
+      labels:
+        app: meg
+    spec:
+      containers:
+        - name: meg
+          image: meg-service:latest
+          ports:
+            - containerPort: 8081

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: senna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: senna
+  template:
+    metadata:
+      labels:
+        app: senna
+    spec:
+      containers:
+        - name: senna
+          image: senna:latest
+          ports:
+            - containerPort: 8080
