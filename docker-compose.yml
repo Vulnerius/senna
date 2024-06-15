@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  senna:
+    build: .
+    container_name: senna
+    ports:
+      - "8080:8080"
+    depends_on:
+      - meg
+
+  meg:
+    image: meg:latest
+    container_name: meg
+    ports:
+      - "8081:8081"
